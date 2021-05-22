@@ -1,0 +1,10 @@
+image: terrestris/gitlab-runner-image
+
+java:
+  stage: test
+  script:
+  - mvn verify
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
